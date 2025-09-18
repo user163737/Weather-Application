@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+  
+  .glass-item {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+@layer utilities {
+  /* Sunny weather background */
+  .bg-sunny {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 50%, #a29bfe 100%);
+  }
+  
+  /* Cloudy weather background */
+  .bg-cloudy {
+    background: linear-gradient(135deg, #636e72 0%, #2d3436 50%, #74b9ff 100%);
+  }
+  
+  /* Rainy weather background */
+  .bg-rainy {
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 50%, #74b9ff 100%);
+  }
+  
+  /* Snowy weather background */
+  .bg-snowy {
+    background: linear-gradient(135deg, #ddd6fe 0%, #a5b4fc 50%, #818cf8 100%);
+  }
+  
+  /* Stormy weather background */
+  .bg-stormy {
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 30%, #a29bfe 100%);
+  }
+  
+  /* Default background */
+  .bg-default {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  /* Background animation */
+  .bg-sunny,
+  .bg-cloudy,
+  .bg-rainy,
+  .bg-snowy,
+  .bg-stormy,
+  .bg-default {
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Custom scrollbar for suggestions dropdown */
+.glass-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.glass-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.glass-card::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.glass-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+/* Responsive text scaling */
+@media (max-width: 640px) {
+  .glass-card {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+}
