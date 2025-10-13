@@ -1,1 +1,1 @@
-https://glassmorphism-weathe-4ud3.bolt.host/
+https://weather-application-pink-delta.vercel.app/
